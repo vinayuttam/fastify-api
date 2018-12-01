@@ -26,6 +26,14 @@ async function UserRoutes(fastify, options) {
             lastName: { type: 'string' },
             email: { type: 'string' },
           }
+        },
+        '4xx': {
+          type: 'object',
+          properties: {
+            statusCode: { type: 'string' },
+            error: { type: 'string' },
+            message: { type: 'string' },
+          }
         }
       },
     },
@@ -51,6 +59,14 @@ async function UserRoutes(fastify, options) {
             token: { type: 'string' },
           },
         },
+        '4xx': {
+          type: 'object',
+          properties: {
+            statusCode: { type: 'string' },
+            error: { type: 'string' },
+            message: { type: 'string' },
+          }
+        }
       },
     },
     handler: UserHandler.authenticateUser,
@@ -72,6 +88,14 @@ async function UserRoutes(fastify, options) {
             },
           },
         },
+        '4xx': {
+          type: 'object',
+          properties: {
+            statusCode: { type: 'string' },
+            error: { type: 'string' },
+            message: { type: 'string' },
+          }
+        }
       },
     },
     beforeHandler: [fastify.authenticate],
