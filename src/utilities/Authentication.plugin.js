@@ -20,7 +20,7 @@ module.exports = FastifyPlugin(function (fastify, options, next) {
       await req.jwtVerify();
     } catch (err) {
       console.log(err)
-      throw new Unauthorized('Invalid authorization token');
+      throw new Unauthorized('Token missing (or) Invalid authorization token');
     }
   });
   next();
